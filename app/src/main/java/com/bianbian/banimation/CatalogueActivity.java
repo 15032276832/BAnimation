@@ -1,11 +1,10 @@
 package com.bianbian.banimation;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.bianbian.tweenanimation.TweenAnimModuleRouter;
 
 public class CatalogueActivity extends Activity {
 
@@ -37,7 +36,7 @@ public class CatalogueActivity extends Activity {
 
     private void setListener() {
         compensationAnimationText.setOnClickListener(view -> {
-            startActivity(new Intent(this, CompensationAnimationActivity.class));
+            TweenAnimModuleRouter.startTweenAnimationActivity(this);
         });
         frameAnimationText.setOnClickListener(view -> {
 

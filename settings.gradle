@@ -1,2 +1,4 @@
+include ':bbb'
+include ':tweenAnimation'
 include ':app'
 rootProject.name = "BAnimation"

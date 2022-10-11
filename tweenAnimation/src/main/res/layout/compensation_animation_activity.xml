@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".alphaanimation.CompensationAnimationActivity">
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e1e1e1"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:text="补间动画"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/compensation_animation_back_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_click_bk"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="4dp"
+        android:text="返回"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="26sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_text">
+
+        <LinearLayout
+            android:paddingBottom="300dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!-- 补间动画简述 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="
+Tween动画，\n
+通过对view的内容进行一系列的图形变换\n
+（包括平移、缩放、旋转、改变透明度）\n
+来实现动画效果\n
+动画效果的实现可以采用XML来做，也可以采用编码来做。\n
+Tween动画有4中类型："
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- 渐变透明度动画 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="渐变透明度动画"
+                    android:textColor="#66000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:text="AlphaAnimation"
+                    android:textColor="#66000000"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="渐变尺寸缩放动画"
+                    android:textColor="#66000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:text="ScaleAnimation"
+                    android:textColor="#66000000"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="画面位置移动动画"
+                    android:textColor="#66000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:text="TranslateAnimation"
+                    android:textColor="#66000000"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="画面旋转动画"
+                    android:textColor="#66000000"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:text="RotateAnimation"
+                    android:textColor="#66000000"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Android自带的几种动画插入器："
+                android:textColor="#000000"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="AccelerateInterpolator            \n加速，开始时慢中间加速"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="DecelerateInterpolator            \n减速，开始时快然后减速"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="AccelerateDecelerateInterolator   \n先加速后减速，开始结束时慢，中间加速"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="AnticipateInterpolator            \n反向，先向反向方向改变一段在加速播放"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="AnticipateOvershootInterpolator   \n反向加超越，先反向相反方向改变，再加速播放，会超出目的值然后缓慢一移动值目的的值"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="BounceInterpolator                \n跳跃，快到目的值时会跳跃，如目的值100，后面的值一次可能为85,77,70,80,90,100"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="CycleLinterpolator                \n循环，动画循环一定次数，值的改变为一次正弦函数：Math.sin(2*mCycle*Math.Pl*input)"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="LinearrInterpolator               \n线性，线性均匀改变"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="OvershottInterpolator             \n超越最后超出目的值然后缓慢改变到目的值"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="
+预备知识\n
+抽象类 Animation 是一个实现 AndroidUI 界面动画效果的API，\n
+Animation是补间动画的基类，它的直接子类\n
+AlphaAnimation,\n
+RotateAnimation,\n
+ScaleAnimation,\n
+TranslateAnimation,\n
+AnimationSet\n
+提供了一系列的动画效果，\n
+可以进行淡入淡出、旋转、缩放、动画集等，\n
+这些效果可以应用在绝大多数的控件中。
+"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <!-- 透明度补间动画 -->
+            <include
+                layout="@layout/compensation_animation_activity_alpha_include"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
