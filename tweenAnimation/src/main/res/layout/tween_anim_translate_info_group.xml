@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/twee_translate_anim_group_li"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/design_default_color_error" />
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+四、TranslateAnimation实现平移的动画效果"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/tween_translate_anim_java_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_click_bk"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="
+方式一：通过代码的方式定义平移动画"
+            android:textColor="#66000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="
+→→→→→→点击查看运行效果→→→→→→"
+            android:textColor="#ff8f0a"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <TextView
+        android:background="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+Animation translateAnimation = new TranslateAnimation(0, 250, 0, 250);\n
+translateAnimation.setDuration(3000);\n
+/* 动画结束后时否保持动画结束的状态 */\n
+translateAnimation.setFillAfter(false);\n
+/* 添加插入器 */\n
+translateAnimation.setInterpolator(context, android.R.anim.cycle_interpolator);\n
+groupLl.startAnimation(translateAnimation);\n
+"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_click_bk"
+        android:id="@+id/tween_translate_anim_xml_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="
+方式二：通过XML定义平移动画"
+            android:textColor="#66000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="
+→→→→→→点击查看运行效果→→→→→→"
+            android:textColor="#ff8f0a"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+1：定义XML动画文件：translate.xml"
+        android:textColor="#66000000"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/tween_translate_xml1" />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+2：加载XML动画文件并将其设置到制定的View上"
+        android:textColor="#66000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:background="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+//加载Xml文件中的动画\n
+/* 添加了先加速后减速插值器 */\n
+Animation rotateAnim = AnimationUtils.loadAnimation(context, R.anim.tween_translate);\n
+groupLl.startAnimation(rotateAnim);
+"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+</LinearLayout>

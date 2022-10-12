@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".alphaanimation.CompensationAnimationActivity">
+    tools:context=".CompensationAnimationActivity">
 
     <TextView
         android:id="@+id/title_text"
@@ -252,8 +252,24 @@ AnimationSet\n
                 android:textSize="14sp" />
 
             <!-- 透明度补间动画 -->
-            <include
-                layout="@layout/compensation_animation_activity_alpha_include"/>
+            <com.bianbian.tweenanimation.alphaanimation.AlphaGroupLl
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- 旋转补间动画 -->
+            <com.bianbian.tweenanimation.rotate.RotateGroupLl
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- 缩放补间动画 -->
+            <com.bianbian.tweenanimation.scale.ScaleGroupLl
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- 平移补间动画 -->
+            <com.bianbian.tweenanimation.translate.TranslateGroupLl
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 

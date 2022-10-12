@@ -3,7 +3,7 @@
     package="com.bianbian.tweenanimation">
 
     <application android:theme="@style/Theme.BAnimation">
-        <activity android:name=".alphaanimation.CompensationAnimationActivity"></activity>
+        <activity android:name=".CompensationAnimationActivity"></activity>
     </application>
 
 

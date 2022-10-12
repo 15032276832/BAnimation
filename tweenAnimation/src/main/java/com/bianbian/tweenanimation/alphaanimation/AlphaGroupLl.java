@@ -1,7 +1,8 @@
 package com.bianbian.tweenanimation.alphaanimation;
 
-import android.app.Activity;
-import android.os.Bundle;
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -10,22 +11,29 @@ import android.widget.Toast;
 
 import com.bianbian.tweenanimation.R;
 
-public class CompensationAnimationActivity extends Activity {
+import androidx.annotation.Nullable;
+
+public class AlphaGroupLl extends LinearLayout {
+
+    Context context;
 
     /* 透明度动画 */
     LinearLayout tweenJavaAlphaLl;
     LinearLayout tweenXMLAlphaLl;
     LinearLayout tweenAlphaGroupLl;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.compensation_animation_activity);
+    public AlphaGroupLl(Context context) {
+        this(context, null);
+    }
 
-        findViewById(R.id.compensation_animation_back_text).setOnClickListener(view -> {
-            finish();
-        });
+    public AlphaGroupLl(Context context, @Nullable AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
 
+    public AlphaGroupLl(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        this.context = context;
+        LayoutInflater.from(context).inflate(R.layout.tween_anim_alpha_info_group, this);
         /* 透明度动画演示 */
         tweenAlphaAnim();
     }
@@ -33,9 +41,9 @@ public class CompensationAnimationActivity extends Activity {
     /* 透明度动画演示 */
     private void tweenAlphaAnim() {
         /* 透明度动画 */
-        tweenJavaAlphaLl = findViewById(R.id.tween_alpha_anim_java_ll);
-        tweenXMLAlphaLl = findViewById(R.id.tween_alpha_anim_xml_ll);
-        tweenAlphaGroupLl = findViewById(R.id.twee_alpha_anim_group_li);
+        tweenJavaAlphaLl = this.findViewById(R.id.tween_alpha_anim_java_ll);
+        tweenXMLAlphaLl = this.findViewById(R.id.tween_alpha_anim_xml_ll);
+        tweenAlphaGroupLl = this.findViewById(R.id.twee_alpha_anim_group_li);
         /* 代码方式实现 */
         tweenJavaAlphaLl.setOnClickListener(view -> {
             toast("代码方式实现：透明度_补间动画\n(间隔3s,重复两次,恢复)");
@@ -59,12 +67,12 @@ public class CompensationAnimationActivity extends Activity {
 
     /* xml方式实现透明度动画 */
     private void tweenAlphaAnimXML() {
-        Animation alphAnim = AnimationUtils.loadAnimation(this, R.anim.tween_alpha);
+        Animation alphAnim = AnimationUtils.loadAnimation(context, R.anim.tween_alpha);
         tweenAlphaGroupLl.startAnimation(alphAnim);
     }
 
     /* 吐司 */
     private void toast(String str) {
-        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, str, Toast.LENGTH_LONG).show();
     }
 }

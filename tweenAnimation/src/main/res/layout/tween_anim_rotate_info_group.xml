@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/twee_alpha_anim_group_li"
+    android:id="@+id/twee_rotate_anim_group_li"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="10dp"
@@ -9,33 +9,60 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:background="@color/design_default_color_error" />
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+二、RotateAnimation实现旋转的动画效果"
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#e1e1e1"
         android:text="
-AlphaAnimation实现淡入淡出的动画效果"
-        android:textColor="#000000"
-        android:textSize="14sp" />
+主要属性及说明：\n
+\n
+repeatCount 重复次数\n
+fromDegrees 为动画起始时物件的角度\n
+    当角度为负数 - 表示逆时针旋转\n
+    当角度为证书 - 表示顺时针旋转\n
+(负数fromDegrees——toDegrees正数:顺时针旋转)\n
+(负数fromDegrees——toDegrees负数:逆时针旋转)\n
+(正数fromDegrees——toDegrees正数:顺时针旋转)\n
+(正数fromDegrees——toDegrees负数:逆时针旋转)\n
+toDegrees属性为动画结束时物件旋转的角度可以大于360度\n
+pivotX,pivotY 为动画相对于物件的X、Y坐标的开始位.
+说明：以上两个属性值从0%-100%中取值,50%为物件的X或Y方向坐标上的中点位置。\n
+实例：\n
+\n
+"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
 
     <LinearLayout
+        android:id="@+id/tween_rotate_anim_java_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/text_click_bk"
-        android:id="@+id/tween_alpha_anim_java_ll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="
-方式一：通过代码的方式定义透明度动画"
+方式一：通过代码的方式定义旋转动画"
             android:textColor="#66000000"
             android:textSize="12sp" />
 
@@ -55,20 +82,22 @@ AlphaAnimation实现淡入淡出的动画效果"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="
-Animation alphaAnimation = new AlphaAnimation(1, (float) 0.1);\n
 //设置动画持续时间为3秒\n
-alphaAnimation.setDuration(3000);\n
+Animation rotateAnimation=new RotateAnimation(0, 45);\n
+rotateAnimation.setDuration(3000);\n
 //设置动画结束后保持当前的位置（即不返回到动画开始前的位置）\n
-alphaAnimation.setFillAfter(true);\n
-imgShow.startAnimation(alphaAnimation);"
+rotateAnimation.setFillAfter(true);\n
+imgShow.startAnimation(rotateAnimation);
+"
         android:textColor="@color/white"
         android:textSize="12sp" />
+
 
     <LinearLayout
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/text_click_bk"
-        android:id="@+id/tween_alpha_anim_xml_ll"
+        android:id="@+id/tween_rotate_anim_xml_ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -77,7 +106,7 @@ imgShow.startAnimation(alphaAnimation);"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="
-方式二：通过XML定义透明度动画"
+方式二：通过XML定义旋转动画"
             android:textColor="#66000000"
             android:textSize="12sp" />
 
@@ -97,7 +126,7 @@ imgShow.startAnimation(alphaAnimation);"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="
-1：定义XML动画文件：alpha.xml"
+1：定义XML动画文件：rotate.xml"
         android:textColor="#66000000"
         android:textSize="12sp" />
 
@@ -106,7 +135,7 @@ imgShow.startAnimation(alphaAnimation);"
         android:layout_height="100dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/tween_alpha_xml1" />
+        android:background="@drawable/tween_rotate_xml1" />
 
     <TextView
         android:layout_marginLeft="10dp"
@@ -125,9 +154,9 @@ imgShow.startAnimation(alphaAnimation);"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="
-//加载Xml文件中的动画/n
-Animation alphaAnimation2=AnimationUtils.loadAnimation(this, R.anim.alpha);/n
-imgShow.startAnimation(alphaAnimation2);/n
+//加载Xml文件中的动画\n
+Animation rotateAnimation2=AnimationUtils.loadAnimation(this, R.anim.rotate);\n
+imgShow.startAnimation(rotateAnimation2);
 "
         android:textColor="@color/white"
         android:textSize="12sp" />
