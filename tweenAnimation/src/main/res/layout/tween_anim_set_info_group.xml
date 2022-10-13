@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tween_set_anim_group_li"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/design_default_color_error" />
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+五、AnimationSet 实现多重动画效果组合"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#e1e1e1"
+        android:text="
+定义动画集主要用到了 AnimationSet 类，\n
+该类可以添加多个补间动画
+"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/tween_set_anim_java_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_click_bk"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="
+方式一：通过代码的方式定义动画集"
+            android:textColor="#66000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="
+→→→→→→点击查看运行效果→→→→→→"
+            android:textColor="#ff8f0a"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <TextView
+        android:background="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+/* 参数如果使用自己的插值器传false，否则true */\n
+AnimationSet animSet = new AnimationSet(true);\n
+animSet.addAnimation(AnimationUtils.loadAnimation(context, R.anim.tween_translate));\n
+animSet.addAnimation(AnimationUtils.loadAnimation(context, R.anim.tween_scale));\n
+animSet.addAnimation(AnimationUtils.loadAnimation(context, R.anim.tween_rotate));\n
+animSet.addAnimation(AnimationUtils.loadAnimation(context, R.anim.tween_alpha));\n
+animSet.setInterpolator(context, android.R.anim.anticipate_interpolator);\n
+groupLl.startAnimation(animSet);
+"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_click_bk"
+        android:id="@+id/tween_set_anim_xml_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="
+方式二：方式二在xml文件中设置动画集合"
+            android:textColor="#66000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="
+→→→→→→点击查看运行效果→→→→→→"
+            android:textColor="#ff8f0a"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+1：定义xml动画文件：animset.xml"
+        android:textColor="#66000000"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/tween_set_xml1" />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+2：加载XML动画文件并将其设置到制定的View上"
+        android:textColor="#66000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:background="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+//加载Xml文件中的动画\n
+Animation animSet = AnimationUtils.loadAnimation(context, R.anim.tween_set_anim);\n
+groupLl.startAnimation(animSet);
+"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+</LinearLayout>

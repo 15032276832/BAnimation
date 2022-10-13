@@ -270,6 +270,11 @@ AnimationSet\n
             <com.bianbian.tweenanimation.translate.TranslateGroupLl
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <!-- set 组合动画 -->
+            <com.bianbian.tweenanimation.set.SetAnimGroupLl
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
     </ScrollView>
 
