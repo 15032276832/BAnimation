@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/bbb" />
+            <option value="$PROJECT_DIR$/frameAnimation" />
             <option value="$PROJECT_DIR$/tweenAnimation" />
           </set>
         </option>

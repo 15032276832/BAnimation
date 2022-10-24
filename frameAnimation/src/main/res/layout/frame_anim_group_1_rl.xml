@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frame_anim_group_1_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="50dp"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/design_default_color_error" />
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+一、使用代码或XML配置每一帧图片"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#e1e1e1"
+        android:text="
+1：准备好的图片放在 res/drawable 下\n
+2：drawable文件夹下定义动画XML，或者java编码（AnimationDrawable）配置帧图片\n
+3：view空间绑定动画效果，AnimationDrawable.start()方法
+"
+        android:textColor="#000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+1：定义frame_list.xml"
+        android:textColor="#66000000"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/fram_anim_xml" />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+2：XML文件含义说明：\n
+\t duration 梅桢图片持续时长\n
+\t oneshot: \n
+\t\t\t\t false表示动画循环播放，\n
+\t\t\t\t true表示只播放一次并停留在最后一帧
+"
+        android:textColor="#66000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+3：animation_list 设置为imageView 背景"
+        android:textColor="#66000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:background="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+runImg.setBackgroundResource(R.drawable.frame_list);
+"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+4：获取ImageView背景并将其转化为 AnimationDrawable"
+        android:textColor="#66000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:background="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+AnimationDrawable animationDrawable = (AnimationDrawable) runImg.getBackground();
+"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+5：animationDrawable.start()"
+        android:textColor="#66000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/frame_anim_group_1_run_text"
+        android:layout_margin="10dp"
+        android:background="@drawable/text_click_bk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="
+→→→→→→点击查看运行效果→→→→→→"
+        android:textColor="#ff8f0a"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/frame_anim_group_1_clean_text"
+        android:layout_margin="10dp"
+        android:background="@drawable/text_click_bk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="
+→→→→→→ Clean →→→→→→"
+        android:textColor="#ff8f0a"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/frame_anim_group_1_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#33000000"
+        android:scaleType="fitCenter" />
+
+</LinearLayout>
