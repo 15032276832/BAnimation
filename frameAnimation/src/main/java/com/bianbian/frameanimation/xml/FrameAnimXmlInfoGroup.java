@@ -1,4 +1,4 @@
-package com.bianbian.frameanimation;
+package com.bianbian.frameanimation.xml;
 
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
@@ -8,9 +8,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bianbian.frameanimation.R;
+
 import androidx.annotation.Nullable;
 
-public class FrameAnimGroup1 extends LinearLayout {
+public class FrameAnimXmlInfoGroup extends LinearLayout {
 
     Context context;
 
@@ -20,15 +22,15 @@ public class FrameAnimGroup1 extends LinearLayout {
 
     AnimationDrawable animationDrawable;
 
-    public FrameAnimGroup1(Context context) {
+    public FrameAnimXmlInfoGroup(Context context) {
         this(context, null);
     }
 
-    public FrameAnimGroup1(Context context, @Nullable AttributeSet attrs) {
+    public FrameAnimXmlInfoGroup(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, -1);
     }
 
-    public FrameAnimGroup1(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public FrameAnimXmlInfoGroup(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.context = context;
         LayoutInflater.from(context).inflate(R.layout.frame_anim_group_1_rl, this);
