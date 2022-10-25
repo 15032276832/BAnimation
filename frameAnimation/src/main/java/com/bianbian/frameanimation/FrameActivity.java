@@ -37,6 +37,7 @@ public class FrameActivity extends Activity {
         resList.add(R.drawable.frame_8);
 
         anim = new CustomFrameAnim();
+        CustomFrameAnim anim = new CustomFrameAnim();
         anim.setAnimBitmapRes(resList).bindImageView(imageView).setRepeat(true);
         startText.setOnClickListener(v -> {
             anim.start();
