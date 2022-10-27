@@ -1,4 +1,4 @@
-package com.bianbian.frameanimation.xml;
+package com.bianbian.frameanimation.animGroupView;
 
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;

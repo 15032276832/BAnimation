@@ -16,7 +16,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public class AnimThreadPool {
+public class ThreadPool {
     private static Map<String, ThreadPoolExecutor> map = new HashMap<>();
 
     public static Future submit(String taskName, Runnable runnable) {
